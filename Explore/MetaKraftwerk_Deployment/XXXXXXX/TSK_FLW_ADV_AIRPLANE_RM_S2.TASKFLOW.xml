@@ -4,7 +4,7 @@
       <types1:EntryId>OyCEx9dwMbgbdoP-gt-11839022-2022-11-08T12:11:00.065Z::tf.xml</types1:EntryId>
       <types1:Name>TSK_FLW_ADV_AIRPLANE_RM_S2-1</types1:Name>
       <types1:MimeType>application/xml+taskflow</types1:MimeType>
-      <types1:Description/>
+      <types1:Description>test comment</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -12,7 +12,8 @@
       <types1:ProcessGroup/>
       <types1:CreatedBy>contact@metakraftwerk.de</types1:CreatedBy>
       <types1:CreationDate>2022-11-08T12:11:00Z</types1:CreationDate>
-      <types1:ModifiedBy/>
+      <types1:ModifiedBy>til.sander@integration-factory.de</types1:ModifiedBy>
+      <types1:ModificationDate>2023-10-13T12:29:24Z</types1:ModificationDate>
       <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -24,7 +25,7 @@
                    overrideAPIName="false">
             <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
             <appliesTo/>
-            <description/>
+            <description>test comment</description>
             <tags/>
             <generator>Informatica Process Designer 11</generator>
             <input>
@@ -58,7 +59,7 @@
                </field>
             </tempFields>
             <notes/>
-            <deployment suspendOnFault="false" tracingLevel="verbose">
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
                <rest/>
             </deployment>
             <flow id="a">
@@ -70,7 +71,7 @@
                   <operation source="constant"
                              to="temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM[1]/inout[1]/DI_PROCESS_ID">00000000-0000-0000-0000-000000000000</operation>
                   <operation source="formula" to="input.DELIVERY_MODE">
-                     <expression language="XQuery">'FULL'</expression>
+                     <expression language="XQuery">'FULLx'</expression>
                   </operation>
                   <link id="l3e7hsia" targetId="l3e7hsgh"/>
                </assignment>
@@ -270,6 +271,11 @@
                             nullable="true"
                             required="false"
                             type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -299,6 +305,11 @@
                             nullable="true"
                             required="false"
                             type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
                   </detail>
                </processObject>
             </dependencies>
@@ -307,5 +318,5 @@
       <types1:GUID>lNyaUBEIpSjcuwiQS8ZNcs</types1:GUID>
       <types1:DisplayName>TSK_FLW_ADV_AIRPLANE_RM_S2</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-10-13T12:26:44.222Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2023-10-13T12:29:34.193Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

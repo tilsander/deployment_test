@@ -13,14 +13,14 @@
       },
       "contextAttributes" : null,
       "additionalInfo" : {
-        "description" : "",
+        "description" : "test comment",
         "contentType" : "application/json; charset=utf-8",
         "documentState" : "VALID"
       }
     }
   },
   "dataFileExtension" : "xml",
-  "updateTime" : "2023-10-13T12:26:46.686Z",
+  "updateTime" : "2023-10-13T12:29:36.954Z",
   "objectRefs" : [ {
     "id" : "jWrRRzVxV4njP6PZe6oDqL",
     "name" : "TSK_ADV_AIRPLANE_RM_S2_STAT",
