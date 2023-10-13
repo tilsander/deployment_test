@@ -1,0 +1,23 @@
+{
+  "objectInfo" : {
+    "id" : "9F0FPqO4h81eBuFmTsHacG",
+    "name" : "XXXXXXX",
+    "type" : "Folder",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "Azure Synapse Patterns",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "updateTime" : "2023-10-13T12:26:46.687Z",
+  "objectRefs" : [ ]
+}

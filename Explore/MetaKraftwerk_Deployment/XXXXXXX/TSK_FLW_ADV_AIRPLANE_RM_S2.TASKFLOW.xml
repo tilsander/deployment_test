@@ -1,0 +1,311 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>OyCEx9dwMbgbdoP-gt-11839022-2022-11-08T12:11:00.065Z::tf.xml</types1:EntryId>
+      <types1:Name>TSK_FLW_ADV_AIRPLANE_RM_S2-1</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>contact@metakraftwerk.de</types1:CreatedBy>
+      <types1:CreationDate>2022-11-08T12:11:00Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="TSK_FLW_ADV_AIRPLANE_RM_S2"
+                   name="TSK_FLW_ADV_AIRPLANE_RM_S2-1"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="DELIVERY_MODE" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="WRITE_STAT" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description=""
+                      name="TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM"
+                      type="reference">
+                  <options>
+                     <option name="failOnNotRun">$po:TSK-CORE-ADV-XXXXXXX-AIRPLANE-RM</option>
+                     <option name="failOnFault">$po:TSK-CORE-ADV-XXXXXXX-AIRPLANE-RM</option>
+                     <option name="referenceTo">$po:TSK-CORE-ADV-XXXXXXX-AIRPLANE-RM</option>
+                  </options>
+               </field>
+               <field description="" name="TSK_ADV_AIRPLANE_RM_S2_STAT" type="reference">
+                  <options>
+                     <option name="failOnNotRun">$po:TSK-ADV-AIRPLANE-RM-S2-STAT</option>
+                     <option name="failOnFault">$po:TSK-ADV-AIRPLANE-RM-S2-STAT</option>
+                     <option name="referenceTo">$po:TSK-ADV-AIRPLANE-RM-S2-STAT</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="l3e7hsi9" targetId="l3e7hsi8"/>
+               </start>
+               <assignment id="l3e7hsi8">
+                  <title>INIT_PARAMS</title>
+                  <operation source="constant"
+                             to="temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM[1]/inout[1]/DI_PROCESS_ID">00000000-0000-0000-0000-000000000000</operation>
+                  <operation source="formula" to="input.DELIVERY_MODE">
+                     <expression language="XQuery">'FULL'</expression>
+                  </operation>
+                  <link id="l3e7hsia" targetId="l3e7hsgh"/>
+               </assignment>
+               <eventContainer id="l3e7hsgh">
+                  <service id="l3e7hsfh">
+                     <title>TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">4JmNgbsDhT5bzHefvmTaqS</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="TSK-CORE-ADV-XXXXXXX-AIRPLANE-RM">temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM</operation>
+                           <operation source="constant"
+                                      to="TSK-CORE-ADV-XXXXXXX-AIRPLANE-RM/inout[1]/DELIVERY_MODE">{$input.DELIVERY_MODE}</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field"
+                                   to="temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM/output/Log_Id">Log Id</operation>
+                        <operation source="field"
+                                   to="temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM/output/Task_Id">Task Id</operation>
+                        <operation source="field"
+                                   to="temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM/output/Start_Time">Start Time</operation>
+                        <operation source="field"
+                                   to="temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM/output/End_Time">End Time</operation>
+                        <operation source="field"
+                                   to="temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM/output/Error_Message">Error Message</operation>
+                        <operation source="field"
+                                   to="temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field"
+                                   to="temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM/output/FirstErrorCode">First Error Code</operation>
+                        <operation source="field"
+                                   to="temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM/inout/REJ_SEGM_ID">REJ_SEGM_ID</operation>
+                        <operation source="field"
+                                   to="temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM/inout/HUB_SEGM_ID">HUB_SEGM_ID</operation>
+                        <operation source="field"
+                                   to="temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM/inout/SAT_SEGM_ID">SAT_SEGM_ID</operation>
+                        <operation source="field"
+                                   to="temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM/inout/DELIVERY_MODE">DELIVERY_MODE</operation>
+                        <operation source="field"
+                                   to="temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM/inout/DI_PROCESS_ID">DI_PROCESS_ID</operation>
+                        <operation source="field"
+                                   to="temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM/inout/STATE_DELTA_DETECT_OPT">STATE_DELTA_DETECT_OPT</operation>
+                        <operation source="field"
+                                   to="temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM/inout/APPLICATION">APPLICATION</operation>
+                        <operation source="field"
+                                   to="temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM/inout/INTEGRATION_SEQ">INTEGRATION_SEQ</operation>
+                        <operation source="field"
+                                   to="temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM/inout/DUPLICATES_DETECT_OPT">DUPLICATES_DETECT_OPT</operation>
+                        <operation source="field"
+                                   to="temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM/inout/FULL_LOAD_CHK_ABORT">FULL_LOAD_CHK_ABORT</operation>
+                        <operation source="field"
+                                   to="temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM/inout/BLOB_CONT_NAME">BLOB_CONT_NAME</operation>
+                        <operation source="field"
+                                   to="temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM/inout/ADLS_FS_NAME">ADLS_FS_NAME</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="l3e7hskc" targetId="l3e7hskb"/>
+                  <events>
+                     <catch faultField="temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM/fault"
+                            id="l3e7hsgf"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM/fault"
+                            id="l3e7hsgg"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <container id="l3e7hskb" type="exclusive">
+                  <title>WRITE_STAT?</title>
+                  <flow id="l3e7hskf">
+                     <eventContainer id="l3e7qo62">
+                        <service id="l3e7qo5a">
+                           <title>TSK_ADV_AIRPLANE_RM_S2_STAT</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">TSK_ADV_AIRPLANE_RM_S2_STAT</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">jWrRRzVxV4njP6PZe6oDqL</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="TSK-ADV-AIRPLANE-RM-S2-STAT">temp.TSK_ADV_AIRPLANE_RM_S2_STAT</operation>
+                                 <operation source="constant"
+                                            to="TSK-ADV-AIRPLANE-RM-S2-STAT/inout[1]/DI_PROCESS_ID">{$temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM[1]/inout[1]/DI_PROCESS_ID}</operation>
+                                 <operation source="constant" to="TSK-ADV-AIRPLANE-RM-S2-STAT/inout[1]/LOG_ID">{$temp.TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM[1]/output[1]/Log_Id}</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.TSK_ADV_AIRPLANE_RM_S2_STAT/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.TSK_ADV_AIRPLANE_RM_S2_STAT/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.TSK_ADV_AIRPLANE_RM_S2_STAT/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.TSK_ADV_AIRPLANE_RM_S2_STAT/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.TSK_ADV_AIRPLANE_RM_S2_STAT/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.TSK_ADV_AIRPLANE_RM_S2_STAT/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.TSK_ADV_AIRPLANE_RM_S2_STAT/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.TSK_ADV_AIRPLANE_RM_S2_STAT/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.TSK_ADV_AIRPLANE_RM_S2_STAT/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.TSK_ADV_AIRPLANE_RM_S2_STAT/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.TSK_ADV_AIRPLANE_RM_S2_STAT/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.TSK_ADV_AIRPLANE_RM_S2_STAT/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.TSK_ADV_AIRPLANE_RM_S2_STAT/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.TSK_ADV_AIRPLANE_RM_S2_STAT/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field"
+                                         to="temp.TSK_ADV_AIRPLANE_RM_S2_STAT/inout/DI_PROCESS_ID">DI_PROCESS_ID</operation>
+                              <operation source="field" to="temp.TSK_ADV_AIRPLANE_RM_S2_STAT/inout/LOG_ID">LOG_ID</operation>
+                              <operation source="field"
+                                         to="temp.TSK_ADV_AIRPLANE_RM_S2_STAT/inout/BLOB_CONT_NAME">BLOB_CONT_NAME</operation>
+                              <operation source="field" to="temp.TSK_ADV_AIRPLANE_RM_S2_STAT/inout/ADLS_FS_NAME">ADLS_FS_NAME</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.TSK_ADV_AIRPLANE_RM_S2_STAT/fault"
+                                  id="l3e7qo60"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.TSK_ADV_AIRPLANE_RM_S2_STAT/fault"
+                                  id="l3e7qo61"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="l3e7hskg" targetId="l3e7hskb" type="containerLink"/>
+                  </flow>
+                  <flow id="l3e7hski">
+                     <link id="l3e7hskj" targetId="l3e7hskb" type="containerLink"/>
+                  </flow>
+                  <link id="l3e7hske" targetId="l3e7hskf" type="containerLink">
+                     <condition source="formula">
+                        <function name="string-equals">
+                           <arg name="left">{$input.WRITE_STAT}</arg>
+                           <arg name="right">1</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="l3e7hskh" targetId="l3e7hski" type="containerLink"/>
+                  <link id="l3e7hskd" targetId="c"/>
+               </container>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="TSK-CORE-ADV-XXXXXXX-AIRPLANE-RM"
+                              isByCopy="true"
+                              name="TSK-CORE-ADV-XXXXXXX-AIRPLANE-RM">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="TSK-ADV-AIRPLANE-RM-S2-STAT"
+                              isByCopy="true"
+                              name="TSK-ADV-AIRPLANE-RM-S2-STAT">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>lNyaUBEIpSjcuwiQS8ZNcs</types1:GUID>
+      <types1:DisplayName>TSK_FLW_ADV_AIRPLANE_RM_S2</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2023-10-13T12:26:44.222Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

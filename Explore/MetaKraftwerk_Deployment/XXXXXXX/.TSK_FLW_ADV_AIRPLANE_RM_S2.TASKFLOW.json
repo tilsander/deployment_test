@@ -1,0 +1,65 @@
+{
+  "objectInfo" : {
+    "id" : "lNyaUBEIpSjcuwiQS8ZNcs",
+    "name" : "TSK_FLW_ADV_AIRPLANE_RM_S2",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "OyCEx9dwMbgbdoP-gt-11839022-2022-11-08T12:11:00.065Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2023-10-13T12:26:46.686Z",
+  "objectRefs" : [ {
+    "id" : "jWrRRzVxV4njP6PZe6oDqL",
+    "name" : "TSK_ADV_AIRPLANE_RM_S2_STAT",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01023T0Z00000000046Z"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/MetaKraftwerk_Deployment/XXXXXXX"
+  }, {
+    "id" : "4JmNgbsDhT5bzHefvmTaqS",
+    "name" : "TSK_CORE_ADV_XXXXXXX_AIRPLANE_RM",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01023T0Z00000000047E"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/MetaKraftwerk_Deployment/XXXXXXX"
+  } ]
+}
